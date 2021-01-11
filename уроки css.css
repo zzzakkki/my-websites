@@ -1,0 +1,549 @@
+@charset "UTF-8";
+
+/*p
+{
+	color: aqua;
+	background-color: coral;
+}
+
+h1
+{
+	color: darkmagenta;
+	background-color: #E9595C;
+}
+
+#bruh
+{
+	color: darkblue;
+	background-color: gainsboro;
+}
+/*это комментарий*/
+/*.ok
+{
+	color: black;
+	background-color: deeppink;
+}
+
+h1.ok
+{
+	color: blueviolet;
+	background-color: darksalmon;
+}
+
+.tt
+{
+	color: forestgreen;
+	background-color: aliceblue;
+}
+
+
+/*селектор
+{
+	свойство: значение;
+}
+*/
+
+/* /*ко всему документу
+*{
+	color: aquamarine
+}
+
+или так*/
+
+body
+{
+	text-align: center;
+	color: #3a26ec;
+	background-image: url(pastel.jpg);
+	/*background-repeat: space; repeat-y - повторить по вертикали слева; repeat-x - повторить по горизонтали сверху;
+	no-repeat - 1 раз сверху слева; repeat - по умолчанию; round - повторяются так. чтобы полностью уместиться в экран; space и inherit*/
+	background-attachment: fixed;
+	letter-spacing: 1px;
+	text-transform: lowercase;
+	word-spacing: 5px;
+	cursor: url(cross.cur), default; /*стиль курсора*/
+}
+
+/*background-attachment
+fixed - Делает фоновое изображение элемента неподвижным.
+scroll - Позволяет перемещаться фону вместе с содержимым.
+inherit - Наследует значение родителя.
+local - Фон фиксируется с учётом поведения элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым,
+но фон выходящий за рамки элемента остаётся на месте.
+*/
+
+
+/*header p путь к определённым p, например в хэдере
+{
+	color: darkmagenta;
+}
+
+article>p обращение к p, которая находится только в артикле, не в секции
+{
+	color: orangered;
+}
+
+p /*теперь будет изменён цвет только у секции, потому что все остальные p уже изменили цвет
+{
+	color: forestgreen;
+}
+*/
+
+
+/* h1, h2, h3, h4 применение сразу к нескольким селекторам
+{
+	color: crimson;
+	text-align: right;
+}
+*/
+
+/*header
+{
+	color: deeppink;
+}
+
+Это наследование - способ, которым мы можем выделять общее кол-во элементов, и потомки принимают все хар-ки родительского элемента,
+если мы не определили другое, то есть:
+
+h1
+{
+	color: dodgerblue;
+}
+
+
+
+Каскадирование
+Источники информации о стиле:
+	1) таблица стилей, созданная автором страницы
+	2) стандартные стили браузера
+	3) стили, определённые пользователем
+*/
+
+
+/*p
+{
+	font-style: italic;
+	font-variant: small-caps;
+	font-weight: 700;
+	font-size: 20px;
+	font-family: 'Roboto Mono', sans-serif;
+}
+font-family - все шрифты, что идут после первого - запасные, если браузер
+не прочитает первый, он возьмёт второй, и так далее
+font-size - можно указывать словами, то есть:
+xx-small, small, medium, large, larger и т.д.
+Также можно указывать через пиксели px, пункты pt (20pt > 20px), единицы em, проценты % (100% - обычный размер)
+
+font-style - italic шрифт курсивом, oblique похож на курсив, не всегда поддерживается
+font-weight - управляет толщиной текста (lighter, bold, bolder, normal), а также с помощью числа
+от 100 до 900
+font-variant - позволяет конвертировать шрифт в маленькие заглавные буквы inherit, normal, small-caps
+
+h1, h2
+{
+	font: italic small-caps 700 20px 'Roboto Mono', sans-serif;
+}
+
+font - именно в таком порядке указываются значения этого свойства
+Можно убирать из фонта что угодно, кроме размера шрифта и family, иначе работать не будет; при этом порядок менять нельзя*/
+
+
+/*h1
+{
+	text-align: left;
+}
+
+h2
+{
+	text-align: right;
+}
+
+h3
+{
+	text-align: inherit; /*наследует расположение родителей
+}*/
+
+/*p
+{
+	text-align: justify; устаревшая параша, не работает
+}
+*/
+
+/*p
+{
+	text-align: auto; возможность оставить положение текста без изменений
+}
+*/
+
+/*p
+{
+	text-align: start; аналог left, если текст идёт слева направо, в общем от начала страницы
+}
+*/
+
+/*p
+{
+	text-align: end; /*аналог right, если текст идёт слева направо
+}*/
+
+/*.Top
+{
+	vertical-align: top; выравнение по верхнему краю ячейки
+}
+
+.Middle
+{
+	vertical-align: middle;
+}
+
+.Bottom
+{
+	vertical-align: bottom;
+}
+
+.Baseline
+{
+	vertical-align: baseline; выравнение базовой линии ячейки с базовой динии первой строки или другого вложенного элемента (или родит. элемента)
+}
+
+.baseline
+{
+	vertical-align: baseline;
+}
+
+.sub
+{
+	vertical-align: sub; подстрочный индекс, шрифт не меняется
+}
+
+.super
+{
+	vertical-align: super; надстрочный индекс, шрифт тоже не меняется
+}
+
+.px
+{
+	vertical-align: -15px; вверх или вниз на кол-во пикселей, шрифт не меняется
+}
+inherit (наследование из родителя)
+text-top (верхняя граница элемента выравнивается по самому высокому элементу в текущей строке
+text-bottom (то же самое, только по самому нижнему*/
+
+
+/*header p{
+	text-decoration: line-through; можно комбинировать значения
+} blink - заставляет текст мигать, работает не для всех браузеров*/
+
+a{
+	text-decoration: none; /*убирает подчёркивание ссылки*/
+	color: #3a26ec;
+	opacity: 0.50; /*прозрачность (1 - непрозрачный)*/
+	filter: alpha(opacity=50); /*для IE*/
+}
+
+/*p
+{
+	text-shadow: 3px 2px 3px green; тень по горизонтали, по вертикали, размытие и можно цвет
+	font-size: 30px;
+	text-decoration: underline;
+	text-indent: 50px; /*text-indent - отступ слева направо px
+}*/
+
+p{
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	word-spacing: 5px;
+	white-space: pre-wrap;
+}
+
+/*text-transform
+capitalize - каждое слово с большой буквы
+uppercase - каждая буква большая
+lowercase - каждая буква маленькая
+
+letter-spacing - расстояние между буквами (положительное и отрицательное значение)
+word-spacing - расстояние междду словами (положительное и отрицательное значение)
+
+white-space - как будут отражаться пробелы внутри элемента:
+pre - отображается так же, как мы написали, добавляется прокрутка текста
+pre-wrap - отображается так же, как мы написали, если текст не помещается, то он сносится
+pre-line - отображается так же, как мы написали, если в начале сноса поставили пробелы, они игнорируются
+nowrap - пробелы не учитываются, перенос строки игнорируется
+*/
+
+/*.l1{
+	border: 4px dotted rebeccapurple; упрощённый вариант: border-width, border-style, border-color
+	border-right-color: blue;
+	border-bottom-color: coral;
+}
+
+border-style: dotted, dashed, none, double, groove, ridge, inset, outset, hidden*/
+
+/*h3{
+	border: 10px solid #ff00ff;
+	width: 100%;
+	height: 90px;
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 200px;
+	max-height: 200px;
+}*/
+
+/*h3{
+	background-color: #f8bef4;
+}*/
+
+/*ul{
+	list-style-type: upper-roman; стиль точек в списке
+	list-style-position: inside; если outside, то цифры, например, будут выпирать слева, а inside - внутрь текста
+	list-style-image: url(ass.png); картинка как нумерация
+}
+или list-style: upper-roman inside url(ass.png); */
+
+/*table{
+	border-collapse: separate; будут ли ячейки иметь одну линию (collapse) или будут разделены (separate)
+	border-spacing: 30px 40px; первое число - расстояние по горизонтали, второе - по вертикали
+	caption-side: bottom; где будет расположен заголовок таблицы
+	empty-cells: hide; отображать ли границы и фон пустых ячеек
+	table-layout: fixed; fixed - не будет меняться ширина ячейки в зависимости от кол-ва содержимого, auto - меняется (по умолчанию)
+}
+
+caption{
+	caption-side: bottom;
+}*/
+
+
+/*ПСЕВДОКЛАССЫ
+a:link стиль для непосещённых ссылок
+a:visited стиль для посещённых ссылок
+a:active стиль ссылки при нажатии
+a:hover активизируется, когда курсор мыши находится в пределах элемента*/
+
+a:hover{
+	cursor: url(cross.cur), pointer;
+}
+
+h1:hover{
+	letter-spacing: 2px;
+}
+
+h2:hover{
+	letter-spacing: 2px;
+}
+
+h3:hover{
+	letter-spacing: 2px;
+}
+
+/*span{
+	display: none; отвечает за визуальное отображение блоков (если поставить none, показывает элемент так, будто его нет вообще)
+}*/
+
+p{
+	visibility: visible; /*отвечает за то, виден элемент или нет; если hidden, то вместо элемента пустота, но он занимает столько же места, сколько было*/
+}
+
+/*h4{
+	position: absolute; static - по умолчанию, top и right и прочие не работают; при fixed - работают, причём при прокрутке
+	страницы положение элемента остаётся в таком же положении, мотается вместе со страницей; absolute - то же самое, только
+	элемент не движется со страницей
+	top: 50px;
+	right: 200px;
+	color: #ebf84e;
+}*/
+
+/*p{
+	clear: both; отменяет обтекание
+}*/
+
+/*img{
+	float: left; обтекание текста слева или справа (как в вики)
+}*/
+
+/*.vr{
+	width: 150px;
+	height: 150px;
+	background-color: #c3c7d1;
+	float: right;
+	overflow: auto; visible - по умолчанию; scroll - появляется прокрутка в окне, которое мы задали в width и height;
+	hidden - текст обрезается, не выходит за рамки окна; auto - определяется само
+}*/
+
+/*.vt{
+	background-color: red;
+	margin-bottom: 15px;
+	width: 130px;
+	height: 130px;
+	color: cornsilk;
+	position: relative;
+	z-index: 2; это окно будет покрыто красным окном, поскольку сначала отображается красное окно
+}*/
+
+/*.vx{
+	background-color: blue;
+	position: relative;
+	width: 130px;
+	height: 130px;
+	color: darkgray;
+	margin-top: 500px;
+	margin-left: 540px;
+	z-index: 1; z-index работает ТОЛЬКО если есть position
+	border-radius: 0 0 0 40px; сглаживание уголков; половина от размера - превращение в круг; можно в процентах
+	box-shadow: inset 10px 10px 5px 5px #0713AA,
+	            inset -10px -10px 5px -5px red,
+				7px 7px 5px 5px #0713AA,
+				10px 10px 5px 5px green,
+				15px 15px 7px 7px red;
+}*/
+
+/*Вендорные префиксы - нужны, чтобы свойства работали во всех браузерах
+-moz- - Mozilla
+-webkit- - Safari, Google Chrome
+-o- - Opera
+-ms- - Internet Explorer
+
+Также про border-radius:
+можно написать так:
+border-radius: верх-лево верх-право вниз-право вниз-лево
+Или с помощью отдельных свойств
+
+box-shadow: inset (тень вовнутрь), длина горизонтального смещения, длина вертикального смещения, размытие, растяжение (отрицательно значение - сжатие тени), цвет тени
+*/
+
+nav{
+	padding: 50px;
+	min-width: 500px;
+}
+
+nav ul{
+	background: linear-gradient(90deg,
+				rgba (255, 255, 255, 0.2)26%,
+				rgba (255, 255, 255, 0.2)76%,
+				rgba (255, 255, 255, 0)0%,
+				rgba (255, 255, 255, 0)100%,);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.1),
+				inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li{
+	display: inline-block;
+}
+
+nav ul li:hover{
+	transform: scale(1.2, 1.2);
+}
+
+nav ul li a{
+	padding: 10px;
+	color: black;
+	font-size: 19px;
+	text-decoration: none;
+	display: block;
+}
+
+/*rgba отвечает за размытость
+вначале мы указываем цвет rgb, то есть красный зелёный синий, затем после 3-х чисел мы указываем прозрачность (1.0 - полностью
+не прозрачный, 0.0 - ничего не происходит*/
+
+h1{
+	text-shadow: 1px 2px 1px black,
+				-2px 3px 2px blue;
+	color: #ce326f;
+	font-family: electroharmonix;
+	display: inline-block;
+	animation-name: textblink;
+	animation-duration: 4s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+}
+
+@keyframes textblink {
+	90%{transform: none}
+	95%{transform: scale(1.1)}
+}
+
+h2{
+	font-family: electroharmonix;
+}
+
+h3{
+	font-family: electroharmonix;
+}
+
+/*article p:last-child{
+	color: #fe0528;
+	text-decoration: underline;
+}*/
+
+/*Псевдоклассы в css
+тег:first-child - свойство применяется к первому ребёнку родителя
+тег:last-child - свойство применяется к последнему ребёнку родителя*/
+
+/*input:invalid{ псевдокласс - срабатывает, если введённое не соответствует указанному типу
+	background-color: rgba(250, 0, 0, 0.5);
+}
+
+input:valid{ псевдокласс - срабатывает, если данные введены правильно
+	background-color: rgb(124, 238, 134)
+}*/
+
+input:checked + span{
+	background-color: rgb(182, 240, 147);
+}
+
+p::first-letter{ /*псевдоэлементы ::before, ::after, ::first-letter, ::first-line*/
+	text-shadow: 1px 2px 1px black,
+				-2px 3px 2px blue;
+	color: #ce326f;
+}
+/*псевдоэлемент selection лучше не применять, его игнорят браузеры*/
+
+/*word-wrap - браузер разбивает слишком длинное слово
+normal - по умолчанию
+break-word - разбивает слово на нескольок строк (без знака переноса)*/
+
+@font-face {
+	font-family: electroharmonix;
+	src: url(electroharmonix.ttf);
+	/*src: url(electroharmonix.eot?#iefix); это для того, чтобы IE хорошо читал шрифт*/
+}
+
+/*footer{
+	background: repeating-linear-gradient(20deg, rgb(237, 162, 229) 30%, rgb(167, 130, 162) 70%);
+	color: rgba(229, 237, 180, 0.52);
+	border-radius: 10px;
+}*/
+
+footer{
+	background: radial-gradient(white 20%, rgb(237, 162, 229) 80%);
+	color: #3a26ec;
+	border-radius: 10px;
+}
+
+article{
+	border: 20px solid rgba(91, 88, 90, 0.1);
+	padding: 20px;
+	background: rgb(225, 228, 107);
+	background-size: 600px 500px;
+	position: relative;
+	left: 350px;
+	width: 500px;
+	background-clip: padding-box;
+	opacity: 0.5;
+	transition: opacity 1s;
+}
+
+article:hover{
+	opacity: 1;
+	transform: rotate(1deg);
+}
+
+/*prespective-origin - устанавливает начало координат для перспективы (по умолчанию 50% 50%)*/
+/*первая цифра - положение по оси Х, вторая - по оси У*/
+/*transform-style - как отображается текст в трёхмерном пространстве
+flat - 2d
+preserve-3d - 3d*/
